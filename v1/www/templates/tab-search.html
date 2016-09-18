@@ -1,0 +1,11 @@
+<ion-view view-title="查询">
+    <ion-content class="search padding">
+        <div class="list vin">
+            <label class="item item-input">
+                <input type="text" ng-change="vinChange()" ng-model="vin.text" placeholder="请输入17位车辆识别码(VIN)">
+            </label>
+            <p>{{hint}}</p>
+        </div>
+        <button class="button button-block button-xcj" ng-click="searchClick()">查询</button>
+    </ion-content>
+</ion-view>
