@@ -1,0 +1,16 @@
+<ion-view view-title="最新活动">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="activity">
+        <div class="list">
+            <div class="section">
+                <div ng-repeat="activity in activities" class="item" ng-click="act({{activity.id}})">
+                    <img class="actImg" ng-src="{{activity.image}}">
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-view view-title="找回密码">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="forget padding">
+        <div class="list">
+            <h4>验证找回</h4>
+            <label class="item item-input">
+                <input type="text" ng-change="phoneChange()" ng-model="phone.text" placeholder="账户">
+            </label>
+            <div>{{hint.phone}}
+                <br>
+            </div>
+            <p></p>
+            <label class="item item-input">
+                <input type="text" ng-change="emailChange()" ng-model="email.text" placeholder="邮箱">
+                <button class="icon ion-star"></button>
+            </label>
+            <div>{{hint.email}}
+                <br>
+            </div>
+            <div class="button button-block button-xcj" id="invalidateBtn" ng-click="invalidateClick()">验证账号</div>
+            <br>
+            <br>
+            <h4>其他方式</h4>
+            <div class="button button-block button-xcj" id="connectBtn" ng-click="connectClick()">联系客服</div>
+        </div>
+    </ion-content>
+</ion-view>

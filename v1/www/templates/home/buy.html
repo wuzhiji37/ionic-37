@@ -1,0 +1,54 @@
+<ion-view view-title="购买">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="buy">
+        <div class="list">
+            <div class="item item-divider">
+            </div>
+            <div class="item package">
+                <div ng-repeat="package in packages" class="button button-outline" id="pkgBtn{{package.id}}" ng-click="pkgClick({{package.id}})">
+                    <p class="price" id="pkgPrice{{package.id}}">{{package.price}}元/{{package.time}}次</p>
+                    <p class="last" id="pkgLast{{package.id}}">有效期{{package.day}}天</p>
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="item set">
+                <div class="title">
+                    套餐数量
+                </div>
+                <button id="plus" class="icon ion-plus" ng-click="plusClick()">
+                </button>
+                <input type="text" ng-model="select.set" ng-change="setChange()">
+                <button id="minus" class="icon ion-minus" ng-click="minusClick()">
+                </button>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="section payment">
+                <div ng-repeat="payment in payments" class="item" id="payBtn{{payment.id}}" ng-click="payClick({{payment.id}})">
+                    <img class="payImg" ng-src="{{payment.image}}">
+                    <div class="title">
+                        {{payment.name}}
+                    </div>
+                    <img class="selectImg" id="select{{payment.id}}" ng-src="img/xcj_tick.png">
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="item price">
+                <div class="title">
+                    总价
+                </div>
+                <div id="totalPrice" ng-bind="total.text">
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+        </div>
+        <div class="button button-block button-xcj" id="buyBtn" ng-click="buyClick()">支付</div>
+    </ion-content>
+</ion-view>

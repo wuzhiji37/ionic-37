@@ -1,0 +1,34 @@
+<ion-view view-title="登录">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive" ng-click="toRegisterClick()">
+            注册
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="login padding">
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-change="phoneChange()" ng-model="phone.text" placeholder="账户">
+            </label>
+            <div>{{hint.phone}}
+                <br>
+            </div>
+            <p></p>
+            <label class="item item-input">
+                <input type="text" ng-change="passwordChange()" ng-model="password.text" placeholder="密码">
+                <button class="icon ion-star"></button>
+            </label>
+            <div>{{hint.password}}
+                <br>
+            </div>
+        </div>
+        <div class="button button-block button-xcj" id="loginBtn" ng-click="loginClick()">登录</div>
+        <div class="button button-clear button-dark" ng-click="toForgetClick()">
+            忘记密码？
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view view-title="账户明细">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="account">
+        <div class="list">
+            <div class="item item-divider">
+            </div>
+            <div class="item">
+                <div class="title">
+                    账户余额
+                </div>
+                <div class="content">
+                    {{user.account}}次
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="section account_arr">
+                <div ng-repeat="account in accounts.arr" class="item">
+                    <div class="content">
+                        ¥{{account.sum}}
+                    </div>
+                    <div class="mainTitle">
+                        {{account.task}}
+                    </div>
+                    <div class="subTitle">
+                        {{account.time}}
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view view-title="用户中心">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear button-positive" ng-click="toSettingClick()">
+            设置
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="user">
+        <div class="list">
+            <div class="item item-divider">
+            </div>
+            <div class="item userinfo" ng-click="toUserinfoClick()">
+                <div class="title">
+                    {{user.phone}}
+                </div>
+                <img class="right-arrow" ng-src="img/arrow-right.png">
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="section">
+                <div class="item account" ng-click="toAccountClick()">
+                    <div class="title">
+                        账户明细
+                    </div>
+                    <img class="right-arrow" ng-src="img/arrow-right.png">
+                </div>
+                <div class="item activity" ng-click="toActivityClick()">
+                    <div class="title">
+                        最新活动
+                    </div>
+                    <img class="right-arrow" ng-src="img/arrow-right.png">
+                </div>
+                <div class="item message" ng-click="toMessageClick()">
+                    <div class="title">
+                        我的消息
+                    </div>
+                    <img class="right-arrow" ng-src="img/arrow-right.png">
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="item connect" ng-click="connectClick()">
+                <div class="title">
+                    联系客服
+                </div>
+                <img class="right-arrow" ng-src="img/arrow-right.png">
+            </div>
+            <div class="item item-divider">
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

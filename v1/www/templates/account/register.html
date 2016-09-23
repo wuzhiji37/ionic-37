@@ -1,0 +1,41 @@
+<ion-view view-title="注册">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="register padding">
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-change="phoneChange()" ng-model="phone.text" placeholder="手机号">
+            </label>
+            <div>{{hint.phone}}
+                <br>
+            </div>
+            <p></p>
+            <label class="item item-input">
+                <input type="text" ng-change="emailChange()" ng-model="email.text" placeholder="邮箱">
+            </label>
+            <div>{{hint.email}}
+                <br>
+            </div>
+            <p></p>
+            <label class="item item-input">
+                <input type="text" ng-change="passwordChange()" ng-model="password.text" placeholder="密码">
+                <button class="icon ion-star"></button>
+            </label>
+            <div>{{hint.password}}
+                <br>
+            </div>
+            <p></p>
+            <label class="item item-input">
+                <input type="text" ng-change="passwordChange()" ng-model="confirm.text" placeholder="确认密码">
+                <button class="icon ion-star"></button>
+            </label>
+            <div>{{hint.confirm}}
+                <br>
+            </div>
+        </div>
+        <div class="button button-block button-xcj" id="registerBtn" ng-click="registerClick()">注册</div>
+    </ion-content>
+</ion-view>

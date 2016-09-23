@@ -1,0 +1,26 @@
+<ion-view view-title="我的消息">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="message">
+        <div class="list">
+            <div class="item item-divider">
+            </div>
+            <div class="section">
+                <div class="item" ng-repeat="message in messages" ng-click="msg({{message.id}})">
+                    <div class="mainTitle">
+                        {{message.title}}
+                    </div>
+                    <div class="subTitle">
+                        {{message.time}}
+                    </div>
+                    <div class="subTitle">
+                        <p>{{message.content}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

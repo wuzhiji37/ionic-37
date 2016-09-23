@@ -1,0 +1,33 @@
+<ion-view view-title="报告">
+    <ion-content class="report">
+        <div class="list">
+            <div class="item item-divider">
+            </div>
+            <label class="item-input">
+                <i class="icon ion-ios-search-strong placeholder-icon"></i>
+                <input type="search" placeholder="搜索" ng-model="searchName" ng-change="search(searchName)">
+            </label>
+            <div class="item item-divider">
+            </div>
+            <div class="section">
+                <div class="item" ng-repeat="report in reports">
+                    <div class="subTitle">
+                        {{report.brand}}
+                    </div>
+                    <div class="subTitle">
+                        {{report.type}}
+                    </div>
+                    <div class="mainTitle">
+                        VIN: {{report.vin}}
+                    </div>
+                    <div class="subTitle">
+                        {{report.time}}
+                    </div>
+                    <div class="rightContent">
+                        {{report.status}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

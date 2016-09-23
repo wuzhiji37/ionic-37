@@ -8,94 +8,163 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
+    $ionicPlatform.ready(function() {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            cordova.plugins.Keyboard.disableScroll(true);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
-  $stateProvider
+    // Ionic uses AngularUI Router which uses the concept of states
+    // Learn more here: https://github.com/angular-ui/ui-router
+    // Set up the various states which the app can be in.
+    // Each state's controller can be found in controllers.js
+    $stateProvider
 
-  // setup an abstract state for the tabs directive
-  
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
+    // setup an abstract state for the tabs directive
 
-  // Each tab has its own nav history stack:
-  .state('tab.home',{
-    url: '/home',
-    views: {
-      'tab-home': {
-        templateUrl: 'templates/tab-home.html',
-        controller: 'HomeCtrl'
-      }
-    }
-  })
-
-  .state('buy',{
-    url: '/buy',
-    templateUrl: 'templates/buy.html',
-    controller: 'BuyCtrl'
-  })
-
-  .state('tab.search', {
-    url: '/search',
-    views: {
-      'tab-search': {
-        templateUrl: 'templates/tab-search.html',
-        controller: 'SearchCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
+        .state('tab', {
+        url: '/tab',
+        abstract: true,
+        templateUrl: 'templates/tabs.html'
     })
 
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
+    // Each tab has its own nav history stack:
+    .state('tab.home', {
+        url: '/home',
+        views: {
+            'tab-home': {
+                templateUrl: 'templates/tab-home.html',
+                controller: 'HomeCtrl'
+            }
+        }
+    })
+
+    .state('tab.search', {
+        url: '/search',
+        cache: false,
+        views: {
+            'tab-search': {
+                templateUrl: 'templates/tab-search.html',
+                controller: 'SearchCtrl'
+            }
+        }
+    })
+
+    .state('tab.report', {
+        url: '/report',
+        cache: false,
+        views: {
+            'tab-report': {
+                templateUrl: 'templates/tab-report.html',
+                controller: 'ReportCtrl'
+            }
+        }
+    })
+
+    .state('tab.user', {
+        url: '/user',
+        cache: false,
+        views: {
+            'tab-user': {
+                templateUrl: 'templates/tab-user.html',
+                controller: 'UserCtrl'
+            }
+        }
+    })
+
+    .state('tab.notlogin', {
+        url: '/notlogin',
+        cache: false,
+        views: {
+            'tab-user': {
+                templateUrl: 'templates/tab-notlogin.html',
+                controller: 'NotLoginCtrl'
+            }
+        }
+    })
+
+
+    .state('buy', {
+        url: '/buy',
+        cache: false,
+        templateUrl: 'templates/home/buy.html',
+        controller: 'BuyCtrl'
+    })
+
+    .state('login', {
+        url: '/login',
+        cache: false,
+        templateUrl: 'templates/account/login.html',
+        controller: 'LoginCtrl'
+    })
+
+    .state('register', {
+        url: '/register',
+        cache: false,
+        templateUrl: 'templates/account/register.html',
+        controller: 'RegisterCtrl'
+    })
+
+    .state('forget', {
+        url: '/forget',
+        cache: false,
+        templateUrl: 'templates/account/forget.html',
+        controller: 'ForgetCtrl'
+    })
+
+    .state('changePassword', {
+        url: '/changePassword',
+        cache: false,
+        templateUrl: 'templates/account/changePassword.html',
+        controller: 'ChangePwdCtrl'
+    })
+
+    .state('userinfo', {
+        url: '/user/userinfo',
+        cache: false,
+        templateUrl: 'templates/user/userinfo.html',
+        controller: 'UserinfoCtrl'
+    })
+
+    .state('account', {
+        url: '/user/account',
+        cache: false,
+        templateUrl: 'templates/user/account.html',
         controller: 'AccountCtrl'
-      }
-    }
-  });
+    })
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/home');
+    .state('activity', {
+        url: '/user/activity',
+        cache: false,
+        templateUrl: 'templates/user/activity.html',
+        controller: 'ActivityCtrl'
+    })
+
+    .state('message', {
+        url: '/user/message',
+        cache: false,
+        templateUrl: 'templates/user/message.html',
+        controller: 'MessageCtrl'
+    })
+
+    .state('setting', {
+        url: '/user/setting',
+        cache: false,
+        templateUrl: 'templates/user/setting.html',
+        controller: 'SettingCtrl'
+    });
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/tab/home');
 
 });

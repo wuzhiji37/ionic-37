@@ -1,41 +1,31 @@
 <ion-view view-title="寻车迹">
     <ion-content class="home">
         <ion-slide-box auto-play="true" does-continue="true" slide-interval=4000 show-pager="true">
-            <ion-slide>
-                <div class="box blue">
-                    <h1>BLUE</h1>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="box yellow">
-                    <h1>YELLOW</h1>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="box pink">
-                    <h1>PINK</h1>
+            <ion-slide ng-repeat="activity in activities">
+                <div class="box activity">
+                    <img ng-src={{activity.image}}>
                 </div>
             </ion-slide>
         </ion-slide-box>
         <button class="button btn_func" ng-click="search()">
-            <a class="button button-icon icon ion-settings"></a>
+            <img ng-src="img/func/xcj_func_search.png">
             <p>车辆信息查询</p>
         </button>
-        <button class="button btn_func" ng-click="buy()">
-            <a class="button button-icon icon ion-settings"></a>
+        <button class="button btn_func" ng-click="buyClick()">
+            <img ng-src="img/func/xcj_func_buy.png">
             <p>购买</p>
         </button>
         <button class="button btn_func">
-            <a class="button button-icon icon ion-settings"></a>
-            <p>345</p>
+            <img ng-src="img/func/xcj_func_check.png">
+            <p>预约第三方检测</p>
         </button>
         <button class="button btn_func">
-            <a class="button button-icon icon ion-settings"></a>
-            <p>456</p>
+            <img ng-src="img/func/xcj_func_repair.png">
+            <p>预约保养维修</p>
         </button>
         <button class="button btn_func">
-            <a class="button button-icon icon ion-settings"></a>
-            <p>567</p>
+            <img ng-src="img/func/xcj_func_robot.png">
+            <p>语音机器人</p>
         </button>
     </ion-content>
 </ion-view>

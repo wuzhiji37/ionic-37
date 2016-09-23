@@ -1,0 +1,67 @@
+<ion-view view-title="用户信息">
+    <ion-nav-bar>
+        <ion-nav-back-button class="button button-assertive" ng-click="goBack()">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content class="userinfo">
+        <div class="list">
+            <div class="item item-divider">
+            </div>
+            <div class="section">
+                <div class="item userphone">
+                    <div class="title">
+                        手机号
+                    </div>
+                    <!-- <img class="right-arrow" ng-src="img/arrow-right.png"> -->
+                    <div class="content">
+                        {{user.phone}}
+                    </div>
+                </div>
+                <div class="item useremail">
+                    <div class="title">
+                        邮箱
+                    </div>
+                    <!-- <img class="right-arrow" ng-src="img/arrow-right.png"> -->
+                    <div class="content">
+                        {{user.email}}
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="section">
+                <div class="item username">
+                    <div class="title">
+                        姓名
+                    </div>
+                    <img class="right-arrow" ng-src="img/arrow-right.png">
+                    <div class="content">
+                        {{user.name}}
+                    </div>
+                </div>
+                <div class="item usergender">
+                    <div class="title">
+                        性别
+                    </div>
+                    <img class="right-arrow" ng-src="img/arrow-right.png">
+                    <div class="content">
+                        {{user.gender}}
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider">
+            </div>
+            <div class="item changePwd" ng-click="toChangePwdClick()">
+                <div class="title">
+                    修改密码
+                </div>
+                <img class="right-arrow" ng-src="img/arrow-right.png">
+            </div>
+            <div class="item item-divider">
+            </div>
+        </div>
+        <div class="button button-block button-xcj" id="logoutBtn" ng-click="logoutClick()">退出登录</div>
+    </ion-content>
+</ion-view>
